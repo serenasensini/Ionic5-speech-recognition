@@ -1,14 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Riconoscimento vocale
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <p>Premi START per iniziare a registrare, STOP per fermare la registrazione.</p>
   </div>
+  <ion-button fill="outline" expand="block" (click)="start()">START</ion-button>
+  <ion-button fill="outline" expand="block" (click)="stop()">STOP</ion-button>
 </ion-content>

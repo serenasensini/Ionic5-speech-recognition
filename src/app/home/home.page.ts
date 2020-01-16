@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private speechRecognition: SpeechRecognition) { }
+
+  start() {
+    this.speechRecognition.startListening()
+        .subscribe(
+            (matches: string[]) => console.log(matches),
+            (onerror) => console.log('error:', onerror)
+        );
+  }
+
+  stop() {
+    this.speechRecognition.stopListening();
+  }
 
 }
